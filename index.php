@@ -18,18 +18,24 @@
     <div class="lewy">
       <h2>taniej o 30%</h2>
       <div class="sk1">
-        
+        <ul>
           <?php
           $conn = mysqli_connect('localhost', 'root', '', 'sklep');
           $q = "SELECT nazwa FROM `towary` WHERE promocja=1";
           $result = mysqli_query($conn, $q);
           // var_dump($result);
-          //  $l=mysqli_num_rows($result);
+          $l = mysqli_num_rows($result);
+
+          // for($i=0;$i<$l;$i++){
+
+          // }
           while ($row = mysqli_fetch_row($result)) {
-            echo "<ul>".$row[0] . "</ul>";
+            //  for($i=0;$i<$l;$i++){
+            echo "<li>", $row[0], "</li>";
+            //  }
           }
           ?>
-        
+        </ul>
       </div>
     </div>
     <div class="srodek">
